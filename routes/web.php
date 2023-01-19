@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LocationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('get-address-from-ip', [GeoLocationController::class, 'index']);
+
+
+Route::get('/lcoationTrack', [LocationController::class, 'index'])->name('location');
